@@ -1,0 +1,1 @@
+SELECT * FROM temptables.world_forest_fires

@@ -1,0 +1,22 @@
+version: 0.1.1
+default:
+  GOOGLE_SERVICE_ACC_KEY:
+    type: service_account
+    project_id: "{{ mage_secret_var('google_sheets_project_id') }}"
+    private_key_id: "{{ mage_secret_var('google_sheets_private_key_id') }}"
+    private_key: "{{ mage_secret_var('google_sheets_private_key') }}"
+    client_email: "{{ mage_secret_var('google_sheets_client_email') }}"
+    client_id: "{{ mage_secret_var('google_sheets_client_id') }}"
+    auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    token_uri: "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url: "{{ mage_secret_var('google_sheets_client_x509_cert_url') }}"
+    universe_domain: googleapis.com
+  trino:
+    catalog: hive
+    host: "{{ mage_secret_var('trino_host') }}"
+    port: 443
+    http_scheme: https
+    user: "{{ mage_secret_var('trino_user') }}"
+    password: "{{ mage_secret_var('trino_password') }}"
+    use_raw_sql: true

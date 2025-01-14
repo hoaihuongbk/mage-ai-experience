@@ -1,0 +1,9 @@
+/.idea/
+/.venv/
+/mage_data/secrets/
+/mage_data/demo_project/.cache/
+/mage_data/demo_project/.operation_history/
+/mage_data/demo_project/pipelines/trino_to_google_sheet_pipeline/.variables/
+/demo_project/.file_versions/
+/demo_project/.ssh_tunnel/
+/mage_data/demo_project/pipelines/google_sheet_to_s3_pipeline/.variables/
