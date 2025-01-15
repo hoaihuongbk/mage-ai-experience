@@ -19,38 +19,66 @@ This demo implements a data pipeline that:
 
 1. Extracts data from Trino database
     - Connects to Trino using built-in SQL connector
-    - Executes SQL queries to fetch required datasets
-    - Handles data type conversions automatically
+    - Executes complex analytical queries
+    - Handles data partitioning and pagination
+    - Manages connection pooling efficiently
 
 2. Transforms data (if needed)
-    - Cleans and formats data
-    - Performs necessary aggregations
-    - Validates data quality
+    - Performs data normalization and standardization
+    - Applies business logic transformations
+    - Handles missing data and outliers
+    - Implements data quality checks and validation rules
+    - Maintains data lineage tracking
 
 3. Loads data to Google Sheets
-    - Authenticates with Google Sheets API
-    - Creates or updates specified spreadsheet
-    - Maintains data freshness with scheduled updates
+    - Uses OAuth2 authentication for secure access
+    - Supports batch updates for performance
+    - Implements retry mechanisms for reliability
+    - Maintains version history of updates
+    - Handles rate limiting gracefully
 
 This pipeline enables business users to:
-- Access database information directly in Google Sheets
-- Collaborate on data analysis in real-time
-- Automate regular reporting workflows
-- Maintain single source of truth for business metrics
+- Access real-time analytics data in familiar spreadsheet format
+- Create dynamic dashboards and reports
+- Set up automated alerts and notifications
+- Track KPIs and metrics historically
+- Share insights across teams securely
 
 ## How to Run This Demo
 
 **Prerequisites**
-- Docker installed
-- Google Sheets API credentials
-- Access to a Trino database
+- Docker and Docker Build installed
+- Google Cloud Platform account with Sheets API enabled
+- Trino cluster access credentials
+- Python 3.10+ installed locally
 
-**Step 1**: Clone this repository to your laptop
+**Step 1**: Clone this repository
 
-**Step 2**: Run `make start` to start the demo, open new browser to this http://localhost:6789.
+```bash
+git clone https://github.com/your-org/mage-ai-demo.git
+cd mage-ai-demo
 
-**Step 3**: Update your connection to `io_config.yaml` file in the project root folder.
+```
 
-**Step 4**: Test your pipeline
+**Step 2**: Start the environment
 
-**Step 5**: Wrap up your work and run `make stop` to stop the demo.
+```bash
+make start
+```
+
+Access the UI at http://localhost:6789
+
+**Step 3**: Configure connections
+- Update credentials for Trino and Google Sheets from `io_config.yaml` file
+- Verify connection settings
+
+**Step 4**: Test pipeline execution
+- Run individual blocks to verify transformations
+- Execute end-to-end pipeline
+- Validate output in Google Sheets
+
+**Step 5**: Clean up resources
+
+```bash
+make stop
+```
